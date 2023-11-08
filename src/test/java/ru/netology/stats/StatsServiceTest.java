@@ -9,7 +9,7 @@ public class StatsServiceTest {
     public void salesAmount() {
         StatsService service = new StatsService();
 
-        int[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedSumSales = 180;
         int actualSumSales = service.salesAmount(sales);
@@ -22,7 +22,7 @@ public class StatsServiceTest {
     public void averageAmountOfSalesPerMonth() {
         StatsService service = new StatsService();
 
-        int[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedAverage = 15;
         int actualAverage = service.averageAmountOfSalesPerMonth(sales);
@@ -58,7 +58,7 @@ public class StatsServiceTest {
     public void numberMonthSalesBelowAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedNumberBelowAverage = 5;
         int actualNumberBelowAverage = service.numberMonthSalesBelowAverage(sales);
@@ -70,7 +70,7 @@ public class StatsServiceTest {
     public void numberMonthSalesAboveAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedNumberAboveAverage = 5;
         int actualNumberAboveAverage = service.numberMonthSalesAboveAverage(sales);

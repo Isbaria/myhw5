@@ -5,23 +5,21 @@ import java.util.stream.IntStream;
 
 public class StatsService {
 
-    public int salesAmount(int[] sales) {
-        int sumSales = Arrays.stream(sales).sum();
+    public int salesAmount(long[] sales) {
+        int sumSales = (int) Arrays.stream(sales).sum();
 
         return sumSales;
     }
 
-    public int averageAmountOfSalesPerMonth(int[] sales) {
+    public int averageAmountOfSalesPerMonth(long[] sales) {
         double average = 0;
-        if (sales.length > 0)
-        {
+        if (sales.length > 0) {
             double sumSales = 0;
             for (int i = 0; i < sales.length; i++) {
                 sumSales += sales[i];
             }
             average = sumSales / sales.length;
         }
-
         return (int) average;
     }
 
@@ -33,7 +31,6 @@ public class StatsService {
                 maxMonth = i;
             }
         }
-
         return maxMonth + 1;
     }
 
@@ -45,11 +42,10 @@ public class StatsService {
                 minMonth = i;
             }
         }
-
         return minMonth + 1;
     }
 
-    public int numberMonthSalesBelowAverage(int[] sales) {
+    public int numberMonthSalesBelowAverage(long[] sales) {
         int average = (int) averageAmountOfSalesPerMonth(sales);
         int numberBelowAverage = 0;
         for (int i = 0; i < sales.length; i++) {
@@ -60,7 +56,7 @@ public class StatsService {
         return numberBelowAverage;
     }
 
-    public int numberMonthSalesAboveAverage(int[] sales) {
+    public int numberMonthSalesAboveAverage(long[] sales) {
         int average = (int) averageAmountOfSalesPerMonth(sales);
         int numberAboveAverage = 0;
         for (int i = 0; i < sales.length; i++) {
